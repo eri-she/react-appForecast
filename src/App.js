@@ -7,7 +7,7 @@ function App() {
       <Search />
       <small>
         <a
-          href="https://github.com/eri-she/react-appWeather"
+          href="https://github.com/eri-she/react-appForecast"
           className="linkGit"
         >
           Open-source code{" "}

@@ -51,10 +51,9 @@ export default function Search() {
         <p className="citySection">{description}</p>
         <hr />
         <div className="row">
-          <div className="col-sm-2">
+          <div className="col-sm-5">
             <img src={icon} alt={description} />
-          </div>
-          <div className="col-sm-3">
+
             <h2 className="temperature"> {temperature}</h2>
           </div>
           <div className="col-sm-7">
@@ -83,13 +82,12 @@ export default function Search() {
         <p className="citySection">Sunny</p>
         <hr />
         <div className="row">
-          <div className="col-sm-2">
+          <div className="col-sm-5">
             <img
               src="http://openweathermap.org/img/wn/02d@2x.png"
               alt={description}
             />
-          </div>
-          <div className="col-sm-3">
+
             <h2 className="temperature"> 20°C</h2>
           </div>
           <div className="col-sm-7">

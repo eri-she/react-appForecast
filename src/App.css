@@ -1,15 +1,15 @@
+.app {
+  max-width: 600px;
+  margin: 50px auto;
+}
 .container {
   border: 1px solid #dadde1;
-  margin-top: 50px;
-  max-width: 50%;
 }
 img {
   position: relative;
-  top: -24px;
+  top: -10px;
 }
-.row {
-  text-align: center;
-}
+
 .citySection,
 .wind,
 .humidity {
@@ -19,4 +19,7 @@ small {
   display: block;
   text-align: center;
   margin-top: 10px;
+}
+.temperature {
+  display: inline;
 }

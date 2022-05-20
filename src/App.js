@@ -3,7 +3,7 @@ import Search from "./Search.js";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Search />
       <small>
         <a

@@ -4,7 +4,7 @@ import Search from "./Search.js";
 function App() {
   return (
     <div className="app">
-      <Search />
+      <Search defaultCity="vienna" />
       <small>
         <a
           href="https://github.com/eri-she/react-appForecast"

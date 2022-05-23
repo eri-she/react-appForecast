@@ -3,22 +3,21 @@ import axios from "axios";
 
 export default function Search() {
   const [city, setCity] = useState("");
-  const [temperature, setTemperature] = useState("");
-  const [description, setDescription] = useState("");
-  const [humidity, setHumidity] = useState("");
-  const [icon, setIcon] = useState("");
-  const [wind, setWind] = useState("");
+  const [weatherData, setWeatherData] = useState({});
   const [loaded, setLoaded] = useState(false);
 
   function showTemperature(response) {
     setLoaded(true);
-    setTemperature(`${Math.round(response.data.main.temp)}°C`);
-    setDescription(`Description: ${response.data.weather[0].description}`);
-    setHumidity(`Humidity: ${response.data.main.humidity} %`);
-    setWind(`Wind: ${response.data.wind.speed}`);
-    setIcon(
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
   }
 
   function handleSearch(event) {
@@ -37,28 +36,34 @@ export default function Search() {
         <form className="input-group mb-3 mt-4" onSubmit={handleSearch}>
           <input
             type="search"
-            placeholder="type a city"
+            placeholder="Enter a city ..."
             className="form-control"
             onChange={getCity}
+            autoFocus="on"
           />
           <button type="submit" className="btn btn-outline-secondary">
             Search
           </button>
         </form>
 
-        <h2 className="city">{city}</h2>
+        <h2 className="city text-capitalize">{city}</h2>
         <p className="citySection">Last updated: date</p>
-        <p className="citySection">{description}</p>
+        <p className="citySection">{weatherData.description}</p>
         <hr />
         <div className="row">
           <div className="col-sm-5">
-            <img src={icon} alt={description} />
+            <img
+              src="http://openweathermap.org/img/wn/02d@2x.png"
+              alt={weatherData.description}
+            />
 
-            <h2 className="temperature"> {temperature}</h2>
+            <h2 className="temperature">
+              {Math.round(weatherData.temperature)} °C
+            </h2>
           </div>
           <div className="col-sm-7">
-            <p className="wind">{wind}</p>
-            <p className="humidity">{humidity}</p>
+            <p className="wind">Wind: {weatherData.wind}</p>
+            <p className="humidity">Humidity: {weatherData.humidity}</p>
           </div>
         </div>
       </div>
@@ -69,15 +74,16 @@ export default function Search() {
         <form className="input-group mb-3 mt-4" onSubmit={handleSearch}>
           <input
             type="search"
-            placeholder="type a city"
+            placeholder="Enter a city ..."
             className="form-control"
             onChange={getCity}
+            autoFocus="on"
           />
           <button type="submit" className="btn btn-outline-secondary">
             Search
           </button>
         </form>
-        <h2 className="city">City</h2>
+        <h2 className="city text-capitilize">City</h2>
         <p className="citySection">Last updated: date</p>
         <p className="citySection">Sunny</p>
         <hr />
@@ -85,7 +91,7 @@ export default function Search() {
           <div className="col-sm-5">
             <img
               src="http://openweathermap.org/img/wn/02d@2x.png"
-              alt={description}
+              alt={weatherData.description}
             />
 
             <h2 className="temperature"> 20°C</h2>

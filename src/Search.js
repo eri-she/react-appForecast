@@ -52,7 +52,7 @@ export default function Search(props) {
         <p className="citySection">
           <FormattedDate date={weatherData.date} />
         </p>
-        <p className="citySection">{weatherData.description}</p>
+        <p className="citySection text-capitalize">{weatherData.description}</p>
         <hr />
         <div className="row">
           <div className="col-sm-5">

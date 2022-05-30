@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -47,33 +47,11 @@ export default function Search(props) {
             Search
           </button>
         </form>
-
-        <h2 className="city text-capitalize">{city}</h2>
-        <p className="citySection">
-          <FormattedDate date={weatherData.date} />
-        </p>
-        <p className="citySection text-capitalize">{weatherData.description}</p>
-        <hr />
-        <div className="row">
-          <div className="col-sm-5">
-            <img
-              src="http://openweathermap.org/img/wn/02d@2x.png"
-              alt={weatherData.description}
-            />
-
-            <h2 className="temperature">
-              {Math.round(weatherData.temperature)} °C
-            </h2>
-          </div>
-          <div className="col-sm-7">
-            <p className="wind">Wind: {weatherData.wind}</p>
-            <p className="humidity">Humidity: {weatherData.humidity}</p>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
     apiCall();
-    return "loading ...";
+    return "loading";
   }
 }

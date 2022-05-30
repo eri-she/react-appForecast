@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -9,12 +10,10 @@ export default function Search(props) {
   function showTemperature(response) {
     setLoaded(true);
     setWeatherData({
-      ready: true,
-      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-
+      date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       city: response.data.name,
     });
@@ -50,7 +49,9 @@ export default function Search(props) {
         </form>
 
         <h2 className="city text-capitalize">{city}</h2>
-        <p className="citySection">Last updated: date</p>
+        <p className="citySection">
+          <FormattedDate date={weatherData.date} />
+        </p>
         <p className="citySection">{weatherData.description}</p>
         <hr />
         <div className="row">
@@ -73,5 +74,6 @@ export default function Search(props) {
     );
   } else {
     apiCall();
+    return "loading ...";
   }
 }

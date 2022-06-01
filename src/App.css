@@ -17,5 +17,10 @@ small {
   margin-top: 10px;
 }
 .temperature {
-  font-size: 35px;
+  font-size: 50px;
+}
+.units {
+  font-size: 20px;
+  position: relative;
+  top: -20px;
 }

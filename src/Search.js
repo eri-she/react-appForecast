@@ -44,7 +44,7 @@ export default function Search(props) {
             onChange={getCity}
             autoFocus="on"
           />
-          <button type="submit" className="btn btn-outline-secondary">
+          <button type="submit" className="btn btn-outline-primary">
             Search
           </button>
         </form>

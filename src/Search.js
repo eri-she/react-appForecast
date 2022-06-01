@@ -16,6 +16,7 @@ export default function Search(props) {
       date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       city: response.data.name,
+      icon: response.data.weather[0].icon,
     });
   }
 

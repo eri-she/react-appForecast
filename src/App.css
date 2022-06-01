@@ -5,10 +5,6 @@
 .container {
   border: 1px solid #dadde1;
 }
-img {
-  position: relative;
-  top: -10px;
-}
 
 .citySection,
 .wind,
@@ -21,5 +17,5 @@ small {
   margin-top: 10px;
 }
 .temperature {
-  display: inline;
+  font-size: 35px;
 }

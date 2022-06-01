@@ -35,7 +35,7 @@ export default function Search(props) {
   }
   if (loaded) {
     return (
-      <div className="container">
+      <div className="container shadow rounded">
         <form className="input-group mb-3 mt-4" onSubmit={handleSearch}>
           <input
             type="search"

@@ -14,7 +14,7 @@ export default function WeatherInfo(props) {
       <hr />
       <div className="row">
         <div className="col-sm-2">
-          <WeatherIcon className="icon" code={props.data.icon} />
+          <WeatherIcon className="icon" code={props.data.icon} size={72} />
         </div>
         <div className="col-sm-4">
           <WeatherConversion data={props.data.temperature} />

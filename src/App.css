@@ -5,11 +5,15 @@
 .container {
   border: 1px solid #dadde1;
 }
+body {
+  color: black;
+}
 
 .citySection,
 .wind,
 .humidity {
   line-height: 10px;
+  color: gray;
 }
 small {
   display: block;
@@ -27,8 +31,15 @@ small {
   position: relative;
   top: -20px;
 }
+.units a {
+  text-decoration: none;
+}
 .forecast {
   background-color: #caf0f86c;
   margin-bottom: 15px;
+
   padding: 10px;
+}
+.temperatureMin {
+  color: gray;
 }

@@ -16,6 +16,9 @@ small {
   text-align: center;
   margin-top: 10px;
 }
+.weatherinfo {
+  margin-bottom: 20px;
+}
 .temperature {
   font-size: 50px;
 }
@@ -23,4 +26,9 @@ small {
   font-size: 20px;
   position: relative;
   top: -20px;
+}
+.forecast {
+  background-color: #caf0f86c;
+  margin-bottom: 15px;
+  padding: 10px;
 }
